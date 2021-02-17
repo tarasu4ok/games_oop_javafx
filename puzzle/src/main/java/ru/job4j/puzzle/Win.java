@@ -20,17 +20,9 @@ public class Win {
     }
 
     public static boolean check(int[][] board) {
-        for (int i = 0; i < board.length; i++) {
-            if (board[i][0] == 1) {
-                if (checkRow(board, i)) {
-                    return true;
-                }
-            }
-        }
-
-        for (int j = 0; j < board[0].length; j++) {
-            if (board[0][j] == 1) {
-                if (checkColumn(board, j)) {
+        for (int commonIndex = 0; commonIndex < board.length; commonIndex++) {
+            if (board[commonIndex][commonIndex] == 1) {
+                if (checkRow(board, commonIndex) || checkColumn(board, commonIndex)) {
                     return true;
                 }
             }
