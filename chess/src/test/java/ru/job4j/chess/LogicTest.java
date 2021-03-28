@@ -17,8 +17,7 @@ public class LogicTest {
         Logic logic = new Logic();
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
         logic.add(bishopBlack);
-        Figure figure = logic.move(Cell.C1, Cell.H6);
-        Assert.assertThat(figure.position(), is(Cell.H6));
+        logic.move(Cell.C1, Cell.H6);
     }
 
     @Test(expected = ImpossibleMoveException.class)
